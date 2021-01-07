@@ -13,7 +13,7 @@
             android:id="@+id/iv_item"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:contentDescription="@string/image_from_internet"
+            android:contentDescription="https://www.glideapps.com/r/NNxT3UHUnlrtrhIihC3H"
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -22,7 +22,7 @@
             android:id="@+id/tv_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_image"
+            android:text="by Paulo David-Angola"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

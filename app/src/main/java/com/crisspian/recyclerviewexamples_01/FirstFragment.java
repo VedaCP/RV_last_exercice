@@ -1,34 +1,45 @@
 package com.crisspian.recyclerviewexamples_01;
 
+import android.os.Binder;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.crisspian.recyclerviewexamples_01.adapter.ItemAdapter;
+import com.crisspian.recyclerviewexamples_01.databinding.FragmentFirstBinding;
 import com.crisspian.recyclerviewexamples_01.model.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FirstFragment extends Fragment {
+private FragmentFirstBinding mBinding;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+     mBinding = FragmentFirstBinding.inflate(inflater, container, false);
+     return mBinding.getRoot();
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ItemAdapter itemAdapter = new ItemAdapter(returnItemList());
+        mBinding.rvItem.setAdapter(itemAdapter);
+        mBinding.rvItem.setLayoutManager(new LinearLayoutManager(getContext()));
        // NavHostFragment.findNavController(FirstFragment.this).navigate(directions);
+
     }
 
 
